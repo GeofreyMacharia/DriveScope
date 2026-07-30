@@ -582,7 +582,7 @@ export default function Home() {
       <footer className="footer">
         <div className="wrap">
           <p className="serif" style={{ fontSize: "2rem", marginBottom: "1rem" }}>DriveScope</p>
-          <p className="muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>Vehicle Intelligence Platform · Geofrey Macharia Nyakairu · Grand Valley State University</p>
+          <p className="muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>· Data Driven · Vehicle Intelligence Platform ·   </p>
           <p style={{ fontSize: "0.75rem", color: "var(--ink-faint)" }}>Predictions powered by Random Forest model trained on 48,355 EPA configurations (1984–2026)</p>
         </div>
       </footer>
