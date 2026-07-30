@@ -562,7 +562,7 @@ export default function Home() {
                       <CartesianGrid strokeDasharray="3 3" stroke="var(--line)" />
                       <XAxis dataKey="year" tick={{ fill: "var(--ink-muted)", fontSize: 11 }} />
                       <YAxis tick={{ fill: "var(--ink-muted)", fontSize: 11 }} tickFormatter={(v: number) => `$${(v/1000).toFixed(1)}k`} />
-                      <Tooltip contentStyle={{ background: "var(--paper)", border: "1px solid var(--line)", borderRadius: "12px" }} formatter={(value: number | string) => [`$${Number(value).toLocaleString()}`, ""]} />
+                      <Tooltip contentStyle={{ background: "var(--paper)", border: "1px solid var(--line)", borderRadius: "12px" }} formatter={(value) => [`$${Number(Array.isArray(value) ? value[0] : value ?? 0).toLocaleString()}`, ""]} />
                       <Legend wrapperStyle={{ fontSize: "12px" }} />
                       <Line dataKey={`${compareResult.vehicle_a.make} ${compareResult.vehicle_a.model}`} stroke="var(--accent)" strokeWidth={2} dot={{ r: 4 }} />
                       <Line dataKey={`${compareResult.vehicle_b.make} ${compareResult.vehicle_b.model}`} stroke="var(--ink-muted)" strokeWidth={2} dot={{ r: 4 }} />
@@ -582,8 +582,9 @@ export default function Home() {
       <footer className="footer">
         <div className="wrap">
           <p className="serif" style={{ fontSize: "2rem", marginBottom: "1rem" }}>DriveScope</p>
-          <p className="muted" style={{ fontSize: "0.775rem", marginBottom: "0.5rem" }}>· Vehicle Intelligence Platform · Data Driven · EPA Trained Configured ·</p>
-          </div>
+          <p className="muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>Vehicle Intelligence Platform · Geofrey Macharia Nyakairu · Grand Valley State University</p>
+          <p style={{ fontSize: "0.75rem", color: "var(--ink-faint)" }}>Predictions powered by Random Forest model trained on 48,355 EPA configurations (1984–2026)</p>
+        </div>
       </footer>
     </div>
   )
